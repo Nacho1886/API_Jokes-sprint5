@@ -8,6 +8,34 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const APIs = {
+    userDates: {
+        url: 'https://ipapi.co/json/'
+    },
+    userWeather: {
+        url: 'https://api.openweathermap.org/data/2.5/weather',
+        key: 'd0047952dfbeb9ec30622425fe11ed84',
+        referenceDates: {
+            latitude: '?lat=',
+            longitude: '&lon=',
+            appId: '&appid=',
+            units: '&units=metric'
+        }
+    },
+    jokes1: {
+        url: 'https://icanhazdadjoke.com/',
+        header: { headers: { Accept: 'application/json' } }
+    },
+    jokes2: {
+        url: 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes',
+        header: {
+            headers: {
+                'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
+                'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
+            }
+        }
+    }
+};
 const weatherIcons = [
     {
         weatherTitle: 'sun',
@@ -74,8 +102,8 @@ class Joke {
         this.date = new Date().toISOString();
     }
 }
-const constructionAnswer = json => {
-    result.innerHTML = `<div>${json.joke}</div> 
+const constructionAnswer = jsonReturn => {
+    result.innerHTML = `<div>${jsonReturn.joke}</div> 
                 <div id="divButtons">
                     <button type="button" data-funcion="1" class="btn btn-outline-info review">Bad</button>
                     <button type="button" data-funcion="2" class="btn btn-outline-dark review">Neutral</button>
@@ -83,65 +111,31 @@ const constructionAnswer = json => {
                 </div>`;
     newJoke.setAttribute('disabled', '');
 };
-const sendingReviewJoke = jsonJoke => {
+const sendingReviewJoke = jsonSend => {
     const reviews = document.querySelectorAll('.review');
     reviews.forEach(buttonReview => {
         buttonReview.addEventListener('click', () => {
             const dataValue = buttonReview.getAttribute('data-funcion');
-            reportJokes.push(new Joke(jsonJoke.joke, Number(dataValue)));
+            reportJokes.push(new Joke(jsonSend.joke, Number(dataValue)));
             reviews.forEach(review => review.setAttribute('disabled', ''));
             newJoke.removeAttribute('disabled');
             console.log(reportJokes);
         });
     });
 };
-const APIs = {
-    userDates: {
-        url: 'https://ipapi.co/json/'
-    },
-    userWeather: {
-        url: 'https://api.openweathermap.org/data/2.5/weather',
-        key: 'd0047952dfbeb9ec30622425fe11ed84',
-        referenceDates: {
-            latitude: '?lat=',
-            longitude: '&lon=',
-            appId: '&appid=',
-            units: '&units=metric'
-        },
-        jokes1: {
-            url: 'https://icanhazdadjoke.com/',
-            headers: { Accept: 'application/json' }
-        },
-        jokes2: {
-            url: 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes',
-            headers: {
-                'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
-                'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
-            }
-        }
-    }
-};
-console.log(APIs.jokes2[2]);
 const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
-    const { latitude, longitude } = yield (yield fetch('https://ipapi.co/json/')).json();
-    const apiWeatherKey = 'd0047952dfbeb9ec30622425fe11ed84';
-    const apiWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiWeatherKey}&units=metric`;
-    const weatherUser = yield (yield fetch(apiWeather)).json();
+    const { userDates, userWeather } = APIs;
+    const { url, key, referenceDates } = userWeather;
+    const { latitude, longitude } = yield (yield fetch(userDates.url)).json();
+    const weatherUrlComplet = url + referenceDates.latitude + latitude + referenceDates.longitude + longitude + referenceDates.appId + key + referenceDates.units;
+    const weatherUser = yield (yield fetch(weatherUrlComplet)).json();
     const currentlyIcon = weatherIcons.find(icons => icons.listIcon.find(icon => icon === weatherUser.weather[0].icon));
     result.innerHTML = currentlyIcon.item;
     document.getElementById('text').innerHTML = `${Math.round(weatherUser.main.temp)}°C`;
 }))();
-const apiJokes2 = 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes';
-const apiJoke2Header = {
-    headers: {
-        'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
-        'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
-    }
-};
-const secondApiGenerator = (() => __awaiter(void 0, void 0, void 0, function* () { return yield (yield fetch(apiJokes2, apiJoke2Header)).json(); }));
+const secondJokeGenerator = (() => __awaiter(void 0, void 0, void 0, function* () { return yield (yield fetch(APIs.jokes2.url, APIs.jokes2.header)).json(); }));
 newJoke === null || newJoke === void 0 ? void 0 : newJoke.addEventListener('click', () => {
-    const apiJokes1 = 'https://icanhazdadjoke.com/';
-    fetch(apiJokes1, { headers: { Accept: 'application/json' } })
+    fetch(APIs.jokes1.url, APIs.jokes1.header)
         .then(response => response.json())
         .then(json => {
         constructionAnswer(json);
