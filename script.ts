@@ -128,9 +128,15 @@ const validateJokeType = joke => {
     return [ joke.joke ]
 }
 
+const printComplexJoke = (joke) => {
+    const firstPart = joke[0]
+    const secondPart = joke[1]
+    
+}
+
 const constructionAnswer = jsonReturn => {
     const finishJoke = validateJokeType(jsonReturn)
-    console.log("🚀 ~ file: script.ts ~ line 133 ~ constructionAnswer ~ finishJoke", finishJoke)
+
     result.innerHTML = `<div>${finishJoke.length === 2 ? finishJoke.join(' ') : finishJoke}</div> 
                 <div id="divButtons">
                     <button type="button" data-funcion="1" class="btn btn-outline-info review">Bad</button>
