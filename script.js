@@ -34,6 +34,15 @@ const APIs = {
                 'host': 'jokes-by-api-ninjas.p.rapidapi.com'
             }
         }
+    },
+    jokes3: {
+        url: 'https://jokeapi-v2.p.rapidapi.com/joke/any',
+        options: {
+            headers: {
+                'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
+                'X-RapidAPI-Host': 'jokeapi-v2.p.rapidapi.com'
+            }
+        }
     }
 };
 const weatherIcons = [
@@ -90,9 +99,9 @@ const result = document.getElementById('result');
 const newJoke = document.getElementById('newJoke');
 const reportJokes = [];
 /* interface Joke {
-  joke: string
-  score: number
-  author: object
+joke: string
+score: number
+author: object
 }
 implements Joke */
 class Joke {
@@ -102,8 +111,16 @@ class Joke {
         this.date = new Date().toISOString();
     }
 }
+const validateJokeType = joke => {
+    if (joke.type === "twopart") {
+        return [joke.setup, joke.delivery];
+    }
+    return [joke.joke];
+};
 const constructionAnswer = jsonReturn => {
-    result.innerHTML = `<div>${jsonReturn.joke}</div> 
+    const finishJoke = validateJokeType(jsonReturn);
+    console.log("🚀 ~ file: script.ts ~ line 133 ~ constructionAnswer ~ finishJoke", finishJoke);
+    result.innerHTML = `<div>${finishJoke.length === 2 ? finishJoke.join(' ') : finishJoke}</div> 
                 <div id="divButtons">
                     <button type="button" data-funcion="1" class="btn btn-outline-info review">Bad</button>
                     <button type="button" data-funcion="2" class="btn btn-outline-dark review">Neutral</button>
@@ -112,12 +129,11 @@ const constructionAnswer = jsonReturn => {
     newJoke.setAttribute('disabled', '');
 };
 const sendingReviewJoke = jsonSend => {
-    console.log("🚀 ~ file: script.ts ~ line 123 ~ sendingReviewJoke ~ jsonSend", jsonSend);
     const reviews = document.querySelectorAll('.review');
     reviews.forEach(buttonReview => {
         buttonReview.addEventListener('click', () => {
             const dataValue = buttonReview.getAttribute('data-funcion');
-            reportJokes.push(new Joke(jsonSend.joke, Number(dataValue)));
+            reportJokes.push(new Joke(validateJokeType(jsonSend), Number(dataValue)));
             reviews.forEach(review => review.setAttribute('disabled', ''));
             newJoke.removeAttribute('disabled');
             console.log(reportJokes);
@@ -134,30 +150,17 @@ const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
     result.innerHTML = currentlyIcon.item;
     document.getElementById('text').innerHTML = `${Math.round(weatherUser.main.temp)}°C`;
 }))();
+// const secondJoke = await (await fetch(APIs.jokes2.url, APIs.jokes2.options)).json()
 newJoke === null || newJoke === void 0 ? void 0 : newJoke.addEventListener('click', () => {
     (() => __awaiter(void 0, void 0, void 0, function* () {
         const randomNumber = Math.round(Math.random());
-        const secondJoke = yield (yield fetch(APIs.jokes2.url, APIs.jokes2.options)).json();
+        const secondJoke = yield (yield fetch(APIs.jokes3.url, APIs.jokes3.options)).json();
         fetch(APIs.jokes1.url, APIs.jokes1.options)
             .then(response => response.json())
             .then(json => {
             const randomJoke = randomNumber === 0 ? json : secondJoke;
-            console.log("🚀 ~ file: script.ts ~ line 164 ~ newJoke?.addEventListener ~ randomJoke", randomJoke);
             constructionAnswer(randomJoke);
             sendingReviewJoke(randomJoke);
         });
     }))();
-});
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
-        'X-RapidAPI-Host': 'jokeapi-v2.p.rapidapi.com'
-    }
-};
-fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&contains=C%2523&idRange=0-150&blacklistFlags=nsfw%2Cracist', options)
-    .then(response => response.json())
-    .then(response => {
-    constructionAnswer(response);
-    sendingReviewJoke(response);
 });
