@@ -16,15 +16,15 @@ const APIs = {
     },
     jokes1: {
         url: 'https://icanhazdadjoke.com/',
-        header: { headers: { Accept: 'application/json' } }
+        options: { headers: { Accept: 'application/json' } }
     },
 
     jokes2: {
         url: 'https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes',
-        header: {
+        options: {
             headers: {
                 'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
-                'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
+                'host': 'jokes-by-api-ninjas.p.rapidapi.com'
             }
         }
     }
@@ -120,6 +120,7 @@ const constructionAnswer = jsonReturn => {
 };
 
 const sendingReviewJoke = jsonSend => {
+    console.log("🚀 ~ file: script.ts ~ line 123 ~ sendingReviewJoke ~ jsonSend", jsonSend)
     const reviews = document.querySelectorAll('.review');
 
     reviews.forEach(buttonReview => {
@@ -152,16 +153,33 @@ const weatherCreation = (async () => {
 
 
 
-const secondJokeGenerator = (async () => 
-await (await fetch(APIs.jokes2.url, APIs.jokes2.header)).json())
-
-
 newJoke?.addEventListener('click', () => {
-
-    fetch(APIs.jokes1.url, APIs.jokes1.header)
-        .then(response => response.json())
-        .then(json => {
-            constructionAnswer(json);
-            sendingReviewJoke(json);
-        });
+    (async () => {
+    const randomNumber = Math.round(Math.random());
+    const secondJoke = await (await fetch(APIs.jokes2.url, APIs.jokes2.options)).json()
+    
+    fetch(APIs.jokes1.url, APIs.jokes1.options)
+    .then(response => response.json())
+    .then(json => {
+        const randomJoke = randomNumber === 0 ?  json : secondJoke
+        console.log("🚀 ~ file: script.ts ~ line 164 ~ newJoke?.addEventListener ~ randomJoke", randomJoke)
+        constructionAnswer(randomJoke);
+        sendingReviewJoke(randomJoke);
+    });
+})()
 });
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '5d310a0d3cmshb1317272eac1986p1eedebjsn8b8fcb68e333',
+		'X-RapidAPI-Host': 'jokeapi-v2.p.rapidapi.com'
+	}
+};
+
+fetch('https://jokeapi-v2.p.rapidapi.com/joke/Any?format=json&contains=C%2523&idRange=0-150&blacklistFlags=nsfw%2Cracist', options)
+	.then(response => response.json())
+	.then(response => {
+        constructionAnswer(response);
+        sendingReviewJoke(response);
+    })
