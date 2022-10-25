@@ -15,6 +15,11 @@ sans-serif !default;
 $font-family-base: $font-family-custom-sans-serif !default;
 
 
+.invisible {
+  display: none;
+}
+
+
 .timeContainer {
   display: flex;
   justify-content: center;

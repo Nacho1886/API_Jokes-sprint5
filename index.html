@@ -13,7 +13,7 @@
     <section class="container">
         <div class="row">
             <div class="col-6">
-<!--                 <div class="timecontainer">
+                <!--                 <div class="timecontainer">
                     <div class="hot sizeTime">
                         <span id="text"></span>
                         <span class="sun"></span>
@@ -23,9 +23,9 @@
             </div>
         </div>
 
-    </div>
+        </div>
 
-            <!--     <div class="cloudy sizeTime">
+        <!--     <div class="cloudy sizeTime">
                 <span id="text"></span>
         <span class="cloud"></span>
         <span class="cloudx"></span>
@@ -74,20 +74,30 @@
             <li></li>
         </ul>
     </div> -->
-    <!-- 
+        <!-- 
         <div class="container">
             <div class="row"> -->
-                <div class="col-6">
-                    <button type="button" id="newJoke" class="btn btn-outline-info">New Joke</button>
-                    <div id="result"></div>
-                    <lord-icon src="https://cdn.lordicon.com/alnsmmtf.json" trigger="hover"
-                    style="width:250px;height:250px">
-                </lord-icon>
+        <div class="col-6">
+            <button type="button" id="newJoke" class="btn btn-outline-info">New Joke</button>
+            <div id="firstPartJoke">
+                <button type="button" data-funcion="1" class="btn btn-outline-info invisible" id="buttonResponse">Second part</button>
             </div>
+            <div id="result">
+            </div>
+            <div id="containerButtons">
+                <button type="button" data-funcion="1" class="btn btn-outline-info invisible review">Bad</button>
+                <button type="button" data-funcion="2" class="btn btn-outline-dark invisible review">Neutral</button>
+                <button type="button" data-funcion="3" class="btn btn-outline-danger invisible review">Good</button>
+            </div>
+            <lord-icon src="https://cdn.lordicon.com/alnsmmtf.json" trigger="hover" style="width:250px;height:250px">
+            </lord-icon>
         </div>
-    </div>
-</section>
-    <script>var exports = {};</script>
+        </div>
+        </div>
+    </section>
+    <script>
+        var exports = {};
+    </script>
     <script src="./script.js" type="module"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
     <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>

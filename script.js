@@ -118,8 +118,12 @@ const weatherIcons = [
         listIcon: ['01n']
     },
 ];
-const result = document.getElementById('result');
 const newJoke = document.getElementById('newJoke');
+const firstPartJoke = document.getElementById('firstPartJoke');
+const buttonResponse = document.getElementById('buttonResponse');
+const result = document.getElementById('result');
+const reviews = document.querySelectorAll('.review');
+let finalJoke;
 const reportJokes = [];
 /* interface Joke {
 joke: string
@@ -140,32 +144,24 @@ const validateJokeType = joke => {
     }
     return [joke.joke];
 };
-const printComplexJoke = (joke) => {
-    const firstPart = joke[0];
-    const secondPart = joke[1];
-};
-const constructionAnswer = jsonReturn => {
-    const finishJoke = validateJokeType(jsonReturn);
-    result.innerHTML = `<div>${finishJoke.length === 2 ? finishJoke.join(' ') : finishJoke}</div> 
-                <div id="divButtons">
-                    <button type="button" data-funcion="1" class="btn btn-outline-info review">Bad</button>
-                    <button type="button" data-funcion="2" class="btn btn-outline-dark review">Neutral</button>
-                    <button type="button" data-funcion="3" class="btn btn-outline-danger review">Good</button>
-                </div>`;
+const printJoke = joke => {
+    finalJoke = joke;
     newJoke.setAttribute('disabled', '');
+    reviews.forEach(review => review.classList.remove('invisible'));
+    if (finalJoke.length === 2)
+        return printComplexJoke(finalJoke);
+    return printFinishJoke(finalJoke);
 };
-const sendingReviewJoke = jsonSend => {
-    const reviews = document.querySelectorAll('.review');
-    reviews.forEach(buttonReview => {
-        buttonReview.addEventListener('click', () => {
-            const dataValue = buttonReview.getAttribute('data-funcion');
-            reportJokes.push(new Joke(validateJokeType(jsonSend), Number(dataValue)));
-            reviews.forEach(review => review.setAttribute('disabled', ''));
-            newJoke.removeAttribute('disabled');
-            console.log(reportJokes);
-        });
-    });
+const printFinishJoke = joke => {
+    result.classList.remove('invisible');
+    result.innerHTML = joke;
 };
+const printComplexJoke = joke => {
+    firstPartJoke.innerHTML = joke[0];
+    result.classList.add('invisible');
+    buttonResponse.classList.remove('invisible');
+};
+const constructionAnswer = jsonReturn => printJoke(validateJokeType(jsonReturn));
 const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
     const { userDates, userWeather } = APIs;
     const { url, key, referenceDates } = userWeather;
@@ -176,18 +172,28 @@ const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
     result.innerHTML = currentlyIcon.item;
     document.getElementById('text').innerHTML = `${Math.round(weatherUser.main.temp)}°C`;
 }))();
-// const secondJoke = await (await fetch(APIs.jokes2.url, APIs.jokes2.options)).json()
-newJoke === null || newJoke === void 0 ? void 0 : newJoke.addEventListener('click', () => {
-    (() => __awaiter(void 0, void 0, void 0, function* () {
-        const randomNumber = Math.round(Math.random());
-        const secondJoke = yield (yield fetch(APIs.jokes3.url, APIs.jokes3.options)).json();
-        console.log("🚀 ~ file: script.ts ~ line 186 ~ secondJoke", secondJoke);
-        fetch(APIs.jokes1.url, APIs.jokes1.options)
-            .then(response => response.json())
-            .then(json => {
-            const randomJoke = randomNumber === 0 ? json : secondJoke;
-            constructionAnswer(randomJoke);
-            sendingReviewJoke(randomJoke);
-        });
-    }))();
+const jokeSelecter = () => __awaiter(void 0, void 0, void 0, function* () {
+    const randomNumber = Math.round(Math.random());
+    const firstJoke = yield (yield fetch(APIs.jokes1.url, APIs.jokes1.options)).json();
+    const secondJoke = yield (yield fetch(APIs.jokes3.url, APIs.jokes3.options)).json();
+    const randomJoke = randomNumber === 0 ? firstJoke : secondJoke;
+    return randomJoke;
+});
+newJoke.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+    const joke = yield jokeSelecter();
+    console.log("🚀 ~ file: script.ts ~ line 225 ~ randomJoke", joke);
+    constructionAnswer(joke);
+}));
+buttonResponse.addEventListener('click', () => {
+    buttonResponse.classList.add('invisible');
+    printFinishJoke(finalJoke[1]);
+});
+reviews.forEach(buttonReview => {
+    buttonReview.addEventListener('click', () => {
+        const dataValue = buttonReview.getAttribute('data-funcion');
+        reportJokes.push(new Joke(finalJoke, Number(dataValue)));
+        reviews.forEach(review => review.setAttribute('disabled', ''));
+        newJoke.removeAttribute('disabled');
+        console.log(reportJokes);
+    });
 });
