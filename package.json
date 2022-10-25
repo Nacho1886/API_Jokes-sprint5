@@ -2,8 +2,5 @@
   "dependencies": {
     "bootstrap": "^5.2.2",
     "sweetalert2": "^11.6.1"
-  },
-  "devDependencies": {
-    "typescript": "^4.8.4"
   }
 }

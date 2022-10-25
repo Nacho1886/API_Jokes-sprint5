@@ -47,74 +47,28 @@ const APIs = {
 };
 const weatherIcons = [
     {
+        id: '01_sun',
         weatherTitle: 'sun',
-        item: `<div class="sizeTime hot">
-                <span id="text"></span>
-                <span class="sun"></span>
-                <span class="sunx"></span>
-            </div>`,
         listIcon: ['01d']
     },
     {
+        id: '02_cloudy',
         weatherTitle: 'cloudy',
-        item: `<div class="sizeTime cloudy">
-                <span id="text"></span>
-                <span class="cloud"></span>
-                <span class="cloudx"></span>
-            </div>`,
         listIcon: ['02d', '02n', '03d', '03n', '04d', '04n']
     },
     {
+        id: '03_stormy',
         weatherTitle: 'stormy',
-        item: `<div class="stormy sizeTime">
-            <span id="text"></span>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <span class="snowe"></span>
-            <span class="snowex"></span>
-            <span class="stick"></span>
-            <span class="stick2"></span>
-        </div>`,
         listIcon: ['09d', '09n', '10d', '10n', '11d', '11n']
     },
     {
+        id: '04_breezy',
         weatherTitle: 'breezy',
-        item: `<div class="breezy sizeTime">
-                <span id="text"></span>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <span class="cloudr"></span>
-            </div>`,
         listIcon: ['13d', '13n', '50d', '50n']
     },
     {
+        id: '05_night',
         weatherTitle: 'night',
-        item: `<div class="night sizeTime">
-                <span id="text"></span>
-                <span class="moon"></span>
-                <span class="spot1"></span>
-                <span class="spot2"></span>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>`,
         listIcon: ['01n']
     },
 ];
@@ -125,12 +79,6 @@ const result = document.getElementById('result');
 const reviews = document.querySelectorAll('.review');
 let finalJoke;
 const reportJokes = [];
-/* interface Joke {
-joke: string
-score: number
-author: object
-}
-implements Joke */
 class Joke {
     constructor(joke, score) {
         this.joke = joke;
@@ -153,10 +101,13 @@ const printJoke = joke => {
     return printFinishJoke(finalJoke);
 };
 const printFinishJoke = joke => {
+    reviews.forEach(review => review.removeAttribute('disabled'));
     result.classList.remove('invisible');
     result.innerHTML = joke;
 };
 const printComplexJoke = joke => {
+    firstPartJoke.classList.remove('invisible');
+    buttonResponse.removeAttribute('disabled');
     firstPartJoke.innerHTML = joke[0];
     result.classList.add('invisible');
     buttonResponse.classList.remove('invisible');
@@ -169,8 +120,9 @@ const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
     const weatherUrlComplet = url + referenceDates.latitude + latitude + referenceDates.longitude + longitude + referenceDates.appId + key + referenceDates.units;
     const weatherUser = yield (yield fetch(weatherUrlComplet)).json();
     const currentlyIcon = weatherIcons.find(icons => icons.listIcon.find(icon => icon === weatherUser.weather[0].icon));
-    result.innerHTML = currentlyIcon.item;
-    document.getElementById('text').innerHTML = `${Math.round(weatherUser.main.temp)}°C`;
+    const activeIconWeather = document.getElementById(currentlyIcon.id);
+    activeIconWeather.classList.remove('invisible');
+    document.querySelector(`#text_${currentlyIcon.id}`).innerHTML = `${Math.round(weatherUser.main.temp)}°C`;
 }))();
 const jokeSelecter = () => __awaiter(void 0, void 0, void 0, function* () {
     const randomNumber = Math.round(Math.random());
@@ -180,12 +132,13 @@ const jokeSelecter = () => __awaiter(void 0, void 0, void 0, function* () {
     return randomJoke;
 });
 newJoke.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
+    firstPartJoke.classList.add('invisible');
+    buttonResponse.classList.add('invisible');
     const joke = yield jokeSelecter();
-    console.log("🚀 ~ file: script.ts ~ line 225 ~ randomJoke", joke);
     constructionAnswer(joke);
 }));
 buttonResponse.addEventListener('click', () => {
-    buttonResponse.classList.add('invisible');
+    buttonResponse.setAttribute('disabled', '');
     printFinishJoke(finalJoke[1]);
 });
 reviews.forEach(buttonReview => {

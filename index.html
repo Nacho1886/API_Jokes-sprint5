@@ -13,87 +13,86 @@
     <section class="container">
         <div class="row">
             <div class="col-6">
-                <!--                 <div class="timecontainer">
-                    <div class="hot sizeTime">
-                        <span id="text"></span>
+                <div class="timecontainer">
+                    <div class="hot sizeTime invisible" id="01_sun">
+                        <span class="text" id="text_01_sun"></span>
                         <span class="sun"></span>
                         <span class="sunx"></span>
                     </div>
-                </div> -->
-            </div>
-        </div>
+                </div>
 
-        </div>
+                <div class="cloudy sizeTime invisible" id="02_cloudy">
+                    <span class="text" id="text_02_cloudy"></span>
+                    <span class="cloud"></span>
+                    <span class="cloudx"></span>
+                </div>
 
-        <!--     <div class="cloudy sizeTime">
-                <span id="text"></span>
-        <span class="cloud"></span>
-        <span class="cloudx"></span>
-    </div>
+                <div class="stormy sizeTime invisible" id="03_stormy">
+                    <span class="text" id="text_03_stormy"></span>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <span class="snowe"></span>
+                    <span class="snowex"></span>
+                    <span class="stick"></span>
+                    <span class="stick2"></span>
+                </div>
 
-    <div class="stormy sizeTime">
-        <span id="text"></span>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <span class="snowe"></span>
-        <span class="snowex"></span>
-        <span class="stick"></span>
-        <span class="stick2"></span>
-    </div>
+                <div class="breezy sizeTime invisible" id="04_breezy">
+                    <span class="text" id="text_04_breezy"></span>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <span class="cloudr"></span>
+                </div>
 
-    <div class="breezy sizeTime">
-        <span id="text"></span>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <span class="cloudr"></span>
-    </div>
-
-    <div class="night sizeTime">
-        <span id="text"></span>
-        <span class="moon"></span>
-        <span class="spot1"></span>
-        <span class="spot2"></span>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div> -->
-        <!-- 
-        <div class="container">
-            <div class="row"> -->
-        <div class="col-6">
-            <button type="button" id="newJoke" class="btn btn-outline-info">New Joke</button>
-            <div id="firstPartJoke">
-                <button type="button" data-funcion="1" class="btn btn-outline-info invisible" id="buttonResponse">Second part</button>
-            </div>
-            <div id="result">
-            </div>
-            <div id="containerButtons">
-                <button type="button" data-funcion="1" class="btn btn-outline-info invisible review">Bad</button>
-                <button type="button" data-funcion="2" class="btn btn-outline-dark invisible review">Neutral</button>
-                <button type="button" data-funcion="3" class="btn btn-outline-danger invisible review">Good</button>
-            </div>
-            <lord-icon src="https://cdn.lordicon.com/alnsmmtf.json" trigger="hover" style="width:250px;height:250px">
-            </lord-icon>
-        </div>
-        </div>
-        </div>
+                <div class="night sizeTime invisible" id="05_night">
+                    <span class="text" id="text_05_night"></span>
+                    <span class="moon"></span>
+                    <span class="spot1"></span>
+                    <span class="spot2"></span>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" id="newJoke" class="btn btn-outline-info">New Joke</button>
+                            <div id="firstPartJoke"></div>
+                            <button type="button" data-funcion="1" class="btn btn-outline-info invisible"
+                                id="buttonResponse">Second part</button>
+                            <div id="result">
+                            </div>
+                            <div id="containerButtons">
+                                <button type="button" data-funcion="1" class="btn btn-outline-info invisible review"
+                                    disabled>Bad</button>
+                                <button type="button" data-funcion="2" class="btn btn-outline-dark invisible review"
+                                    disabled>Neutral</button>
+                                <button type="button" data-funcion="3" class="btn btn-outline-danger invisible review"
+                                    disabled>Good</button>
+                            </div>
+                            <lord-icon src="https://cdn.lordicon.com/alnsmmtf.json" trigger="hover"
+                                style="width:250px;height:250px">
+                            </lord-icon>
+                        </div>
+                    </div>
+                </div>
     </section>
     <script>
         var exports = {};
