@@ -46,31 +46,11 @@ const APIs = {
     }
 };
 const weatherIcons = [
-    {
-        id: '01_sun',
-        weatherTitle: 'sun',
-        listIcon: ['01d']
-    },
-    {
-        id: '02_cloudy',
-        weatherTitle: 'cloudy',
-        listIcon: ['02d', '02n', '03d', '03n', '04d', '04n']
-    },
-    {
-        id: '03_stormy',
-        weatherTitle: 'stormy',
-        listIcon: ['09d', '09n', '10d', '10n', '11d', '11n']
-    },
-    {
-        id: '04_breezy',
-        weatherTitle: 'breezy',
-        listIcon: ['13d', '13n', '50d', '50n']
-    },
-    {
-        id: '05_night',
-        weatherTitle: 'night',
-        listIcon: ['01n']
-    },
+    { id: '01_sun', listIcon: ['01d'] },
+    { id: '02_cloudy', listIcon: ['02d', '02n', '03d', '03n', '04d', '04n'] },
+    { id: '03_stormy', listIcon: ['09d', '09n', '10d', '10n', '11d', '11n'] },
+    { id: '04_breezy', listIcon: ['13d', '13n', '50d', '50n'] },
+    { id: '05_night', listIcon: ['01n'] },
 ];
 const newJoke = document.getElementById('newJoke');
 const firstPartJoke = document.getElementById('firstPartJoke');
@@ -93,8 +73,8 @@ const validateJokeType = joke => {
     return [joke.joke];
 };
 const printJoke = joke => {
-    finalJoke = joke;
     newJoke.setAttribute('disabled', '');
+    finalJoke = joke;
     reviews.forEach(review => review.classList.remove('invisible'));
     if (finalJoke.length === 2)
         return printComplexJoke(finalJoke);
@@ -106,11 +86,11 @@ const printFinishJoke = joke => {
     result.innerHTML = joke;
 };
 const printComplexJoke = joke => {
+    firstPartJoke.innerHTML = joke[0];
     firstPartJoke.classList.remove('invisible');
     buttonResponse.removeAttribute('disabled');
-    firstPartJoke.innerHTML = joke[0];
-    result.classList.add('invisible');
     buttonResponse.classList.remove('invisible');
+    result.classList.add('invisible');
 };
 const constructionAnswer = jsonReturn => printJoke(validateJokeType(jsonReturn));
 const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
@@ -143,10 +123,10 @@ buttonResponse.addEventListener('click', () => {
 });
 reviews.forEach(buttonReview => {
     buttonReview.addEventListener('click', () => {
+        newJoke.removeAttribute('disabled');
         const dataValue = buttonReview.getAttribute('data-funcion');
         reportJokes.push(new Joke(finalJoke, Number(dataValue)));
         reviews.forEach(review => review.setAttribute('disabled', ''));
-        newJoke.removeAttribute('disabled');
         console.log(reportJokes);
     });
 });
