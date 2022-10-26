@@ -5,95 +5,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./sass/style.css">
     <title>Sprint 5</title>
 </head>
 
 <body>
-    <section class="container">
-        <div class="row">
-            <div class="col-6">
-                <div class="timecontainer">
-                    <div class="hot sizeTime invisible" id="01_sun">
-                        <span class="text" id="text_01_sun"></span>
-                        <span class="sun"></span>
-                        <span class="sunx"></span>
-                    </div>
-                </div>
-
-                <div class="cloudy sizeTime invisible" id="02_cloudy">
-                    <span class="text" id="text_02_cloudy"></span>
-                    <span class="cloud"></span>
-                    <span class="cloudx"></span>
-                </div>
-
-                <div class="stormy sizeTime invisible" id="03_stormy">
-                    <span class="text" id="text_03_stormy"></span>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <span class="snowe"></span>
-                    <span class="snowex"></span>
-                    <span class="stick"></span>
-                    <span class="stick2"></span>
-                </div>
-
-                <div class="breezy sizeTime invisible" id="04_breezy">
-                    <span class="text" id="text_04_breezy"></span>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <span class="cloudr"></span>
-                </div>
-
-                <div class="night sizeTime invisible" id="05_night">
-                    <span class="text" id="text_05_night"></span>
-                    <span class="moon"></span>
-                    <span class="spot1"></span>
-                    <span class="spot2"></span>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6">
-                            <button type="button" id="newJoke" class="btn btn-outline-info">New Joke</button>
-                            <div id="firstPartJoke"></div>
-                            <button type="button" data-funcion="1" class="btn btn-outline-info invisible"
-                                id="buttonResponse">Second part</button>
-                            <div id="result">
-                            </div>
-                            <div id="containerButtons">
-                                <button type="button" data-funcion="1" class="btn btn-outline-info invisible review"
-                                    disabled>Bad</button>
-                                <button type="button" data-funcion="2" class="btn btn-outline-dark invisible review"
-                                    disabled>Neutral</button>
-                                <button type="button" data-funcion="3" class="btn btn-outline-danger invisible review"
-                                    disabled>Good</button>
-                            </div>
-                            <lord-icon src="https://cdn.lordicon.com/alnsmmtf.json" trigger="hover"
-                                style="width:250px;height:250px">
-                            </lord-icon>
+    <header class="container-fluid p-0 animate__animated animate__swing">
+        <img src="images\top_svg.svg" alt="">
+    </header>
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="timecontainer">
+                        <div class="hot sizeTime invisible" id="01_sun">
+                            <span class="text" id="text_01_sun"></span>
+                            <span class="sun"></span>
+                            <span class="sunx"></span>
                         </div>
                     </div>
+
+                    <div class="cloudy sizeTime invisible" id="02_cloudy">
+                        <span class="text" id="text_02_cloudy"></span>
+                        <span class="cloud"></span>
+                        <span class="cloudx"></span>
+                    </div>
+
+                    <div class="stormy sizeTime invisible" id="03_stormy">
+                        <span class="text" id="text_03_stormy"></span>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <span class="snowe"></span>
+                        <span class="snowex"></span>
+                        <span class="stick"></span>
+                        <span class="stick2"></span>
+                    </div>
+
+                    <div class="breezy sizeTime invisible" id="04_breezy">
+                        <span class="text" id="text_04_breezy"></span>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <span class="cloudr"></span>
+                    </div>
+
+                    <div class="night sizeTime invisible" id="05_night">
+                        <span class="text" id="text_05_night"></span>
+                        <span class="moon"></span>
+                        <span class="spot1"></span>
+                        <span class="spot2"></span>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </article>
+    <section class="container avatar">
+        <div class="row">
+            <div class="col-6">
+                <button type="button" id="newJoke" class="btn btn-outline-info">New Joke</button>
+                <div id="firstPartJoke"></div>
+                <button type="button" data-funcion="1" class="btn btn-outline-info invisible" id="buttonResponse">Second
+                    part</button>
+                <div id="result">
+                </div>
+                <div id="containerButtons">
+                    <button type="button" data-funcion="1" class="btn btn-outline-info invisible review"
+                        disabled>Bad</button>
+                    <button type="button" data-funcion="2" class="btn btn-outline-dark invisible review"
+                        disabled>Neutral</button>
+                    <button type="button" data-funcion="3" class="btn btn-outline-danger invisible review"
+                        disabled>Good</button>
+                </div>
+
+            </div>
     </section>
+    <article>
+        <div class="container-coffe">
+            <div class="coffee-header">
+                <div class="coffee-header__buttons coffee-header__button-one"></div>
+                <div class="coffee-header__buttons coffee-header__button-two"></div>
+                <div class="coffee-header__display"></div>
+                <div class="coffee-header__details"></div>
+            </div>
+            <div class="coffee-medium">
+                <div class="coffe-medium__exit"></div>
+                <div class="coffee-medium__arm"></div>
+                <div class="coffee-medium__liquid"></div>
+                <div class="coffee-medium__smoke coffee-medium__smoke-one"></div>
+                <div class="coffee-medium__smoke coffee-medium__smoke-two"></div>
+                <div class="coffee-medium__smoke coffee-medium__smoke-three"></div>
+                <div class="coffee-medium__smoke coffee-medium__smoke-for"></div>
+                <div class="coffee-medium__cup"></div>
+            </div>
+            <div class="coffee-footer"></div>
+        </div>
+    </article>
+    <footer class="container-fluid p-0 fixed-bottom w-100">
+        <img class="fixed-bottom" src="images\bottom_svg.svg" alt="">
+    </footer>
     <script>
         var exports = {};
     </script>
