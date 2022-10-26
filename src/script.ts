@@ -6,7 +6,7 @@ import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./
 import { finalJoke } from "./variables/lets"
 import { printWeather } from "./weather/printWeather"
 
-window.addEventListener('load' printWeather)
+window.addEventListener('load', printWeather)
 
 newJoke.addEventListener('click', async () => {
     firstPartJoke.classList.add('invisible')
