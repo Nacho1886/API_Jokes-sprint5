@@ -93,12 +93,15 @@ const printComplexJoke = joke => {
     result.classList.add('invisible');
 };
 const constructionAnswer = jsonReturn => printJoke(validateJokeType(jsonReturn));
-const weatherCreation = (() => __awaiter(void 0, void 0, void 0, function* () {
+const weatherSaved = () => __awaiter(void 0, void 0, void 0, function* () {
     const { userDates, userWeather } = APIs;
     const { url, key, referenceDates } = userWeather;
     const { latitude, longitude } = yield (yield fetch(userDates.url)).json();
     const weatherUrlComplet = url + referenceDates.latitude + latitude + referenceDates.longitude + longitude + referenceDates.appId + key + referenceDates.units;
-    const weatherUser = yield (yield fetch(weatherUrlComplet)).json();
+    return yield (yield fetch(weatherUrlComplet)).json();
+});
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    const weatherUser = yield weatherSaved();
     const currentlyIcon = weatherIcons.find(icons => icons.listIcon.find(icon => icon === weatherUser.weather[0].icon));
     const activeIconWeather = document.getElementById(currentlyIcon.id);
     activeIconWeather.classList.remove('invisible');

@@ -113,21 +113,24 @@ const constructionAnswer = jsonReturn => printJoke(validateJokeType(jsonReturn))
 
 
 
-const weatherCreation = (async () => {
+const weatherSaved = async () => {
     const { userDates, userWeather } = APIs
     const { url, key, referenceDates } = userWeather
     const { latitude, longitude } = await (await fetch(userDates.url)).json();
     const weatherUrlComplet: string = url + referenceDates.latitude + latitude + referenceDates.longitude + longitude + referenceDates.appId + key + referenceDates.units
-    const weatherUser = await (await fetch(weatherUrlComplet)).json();
+    return await (await fetch(weatherUrlComplet)).json();
+}
 
+(async () => {
+    const weatherUser = await weatherSaved()
     const currentlyIcon = weatherIcons.find(icons => icons.listIcon.find
         (icon => icon === weatherUser.weather[0].icon))
     
     const activeIconWeather = document.getElementById(currentlyIcon.id)
     activeIconWeather.classList.remove('invisible')
-
+    
     document.querySelector(`#text_${currentlyIcon.id}`).innerHTML = `${Math.round(weatherUser.main.temp)}°C`
-})();
+})()
 
 
 const jokeSelecter = async () => {
