@@ -100,13 +100,13 @@ const weatherSaved = () => __awaiter(void 0, void 0, void 0, function* () {
     const weatherUrlComplet = url + referenceDates.latitude + latitude + referenceDates.longitude + longitude + referenceDates.appId + key + referenceDates.units;
     return yield (yield fetch(weatherUrlComplet)).json();
 });
-(() => __awaiter(void 0, void 0, void 0, function* () {
+const printWeather = () => __awaiter(void 0, void 0, void 0, function* () {
     const weatherUser = yield weatherSaved();
     const currentlyIcon = weatherIcons.find(icons => icons.listIcon.find(icon => icon === weatherUser.weather[0].icon));
     const activeIconWeather = document.getElementById(currentlyIcon.id);
     activeIconWeather.classList.remove('invisible');
     document.querySelector(`#text_${currentlyIcon.id}`).innerHTML = `${Math.round(weatherUser.main.temp)}°C`;
-}))();
+});
 const jokeSelecter = () => __awaiter(void 0, void 0, void 0, function* () {
     const randomNumber = Math.round(Math.random());
     const firstJoke = yield (yield fetch(APIs.jokes1.url, APIs.jokes1.options)).json();

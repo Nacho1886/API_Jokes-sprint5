@@ -121,7 +121,7 @@ const weatherSaved = async () => {
     return await (await fetch(weatherUrlComplet)).json();
 }
 
-(async () => {
+const printWeather = async () => {
     const weatherUser = await weatherSaved()
     const currentlyIcon = weatherIcons.find(icons => icons.listIcon.find
         (icon => icon === weatherUser.weather[0].icon))
@@ -130,7 +130,7 @@ const weatherSaved = async () => {
     activeIconWeather.classList.remove('invisible')
     
     document.querySelector(`#text_${currentlyIcon.id}`).innerHTML = `${Math.round(weatherUser.main.temp)}°C`
-})()
+}
 
 
 const jokeSelecter = async () => {
