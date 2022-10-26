@@ -2,8 +2,8 @@ import { constructionAnswer } from "./jokes/constructionAnswer"
 import { Joke } from "./jokes/Joke"
 import { jokeSelecter } from "./jokes/jokeSelecter"
 import { printFinishJoke } from "./jokes/printFinishJoke"
+import { finalJoke } from "./jokes/printJoke"
 import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants"
-import { finalJoke } from "./variables/lets"
 import { printWeather } from "./weather/printWeather"
 
 window.addEventListener('load', printWeather)

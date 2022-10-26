@@ -13,8 +13,8 @@ const constructionAnswer_1 = require("./jokes/constructionAnswer");
 const Joke_1 = require("./jokes/Joke");
 const jokeSelecter_1 = require("./jokes/jokeSelecter");
 const printFinishJoke_1 = require("./jokes/printFinishJoke");
+const printJoke_1 = require("./jokes/printJoke");
 const constants_1 = require("./variables/constants");
-const lets_1 = require("./variables/lets");
 const printWeather_1 = require("./weather/printWeather");
 window.addEventListener('load', printWeather_1.printWeather);
 constants_1.newJoke.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
@@ -25,13 +25,13 @@ constants_1.newJoke.addEventListener('click', () => __awaiter(void 0, void 0, vo
 }));
 constants_1.buttonResponse.addEventListener('click', () => {
     constants_1.buttonResponse.setAttribute('disabled', '');
-    (0, printFinishJoke_1.printFinishJoke)(lets_1.finalJoke[1]);
+    (0, printFinishJoke_1.printFinishJoke)(printJoke_1.finalJoke[1]);
 });
 constants_1.reviews.forEach(buttonReview => {
     buttonReview.addEventListener('click', () => {
         constants_1.newJoke.removeAttribute('disabled');
         const dataValue = buttonReview.getAttribute('data-funcion');
-        constants_1.reportJokes.push(new Joke_1.Joke(lets_1.finalJoke, Number(dataValue)));
+        constants_1.reportJokes.push(new Joke_1.Joke(printJoke_1.finalJoke, Number(dataValue)));
         constants_1.reviews.forEach(review => review.setAttribute('disabled', ''));
         console.log(constants_1.reportJokes);
     });
