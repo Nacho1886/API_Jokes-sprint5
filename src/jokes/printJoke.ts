@@ -1,6 +1,6 @@
-import { newJoke, reviews } from "../variables/constants";
-import { printComplexJoke } from "./printComplexJoke";
-import { printFinishJoke } from "./printFinishJoke";
+import { newJoke, reviews } from "../variables/constants.js";
+import { printComplexJoke } from "./printComplexJoke.js";
+import { printFinishJoke } from "./printFinishJoke.js";
 
 
 export let finalJoke: object[]

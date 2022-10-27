@@ -1,4 +1,4 @@
-import { APIs } from "../data/APIs";
+import { APIs } from "../data/APIs.js";
 
 export const jokeSelecter = async () => {
     const randomNumber = Math.round(Math.random());

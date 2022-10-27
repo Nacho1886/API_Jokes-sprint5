@@ -1,5 +1,5 @@
-import { weatherIcons } from "../data/weatherIcons"
-import { weatherSaved } from "./weatherSaved"
+import { weatherIcons } from "../data/weatherIcons.js"
+import { weatherSaved } from "./weatherSaved.js"
 
 export const printWeather = async () => {
     const weatherUser = await weatherSaved()

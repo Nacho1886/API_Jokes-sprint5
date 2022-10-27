@@ -1,4 +1,4 @@
-import { buttonResponse, firstPartJoke, result } from "../variables/constants"
+import { buttonResponse, firstPartJoke, result } from "../variables/constants.js"
 
 export const printComplexJoke = joke => {
     firstPartJoke.innerHTML = joke[0]

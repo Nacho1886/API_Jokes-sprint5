@@ -1,4 +1,4 @@
-import { APIs } from "../data/APIs";
+import { APIs } from "../data/APIs.js";
 
 export const weatherSaved = async () => {
     const { userDates, userWeather } = APIs

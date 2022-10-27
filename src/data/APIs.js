@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.APIs = void 0;
-exports.APIs = {
+export const APIs = {
     userDates: {
         url: 'https://ipapi.co/json/'
     },

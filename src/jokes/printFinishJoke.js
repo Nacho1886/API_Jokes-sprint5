@@ -1,10 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.printFinishJoke = void 0;
-const constants_1 = require("../variables/constants");
-const printFinishJoke = joke => {
-    constants_1.reviews.forEach(review => review.removeAttribute('disabled'));
-    constants_1.result.classList.remove('invisible');
-    constants_1.result.innerHTML = joke;
+import { result, reviews } from "../variables/constants.js";
+export const printFinishJoke = joke => {
+    reviews.forEach(review => review.removeAttribute('disabled'));
+    result.classList.remove('invisible');
+    result.innerHTML = joke;
 };
-exports.printFinishJoke = printFinishJoke;

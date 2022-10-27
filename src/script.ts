@@ -1,10 +1,11 @@
-import { constructionAnswer } from "./jokes/constructionAnswer"
-import { Joke } from "./jokes/Joke"
-import { jokeSelecter } from "./jokes/jokeSelecter"
-import { printFinishJoke } from "./jokes/printFinishJoke"
-import { finalJoke } from "./jokes/printJoke"
-import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants"
-import { printWeather } from "./weather/printWeather"
+import { constructionAnswer } from "./jokes/constructionAnswer.js"
+import { Joke } from "./jokes/Joke.js"
+import { jokeSelecter } from "./jokes/jokeSelecter.js"
+import { printFinishJoke } from "./jokes/printFinishJoke.js"
+import { finalJoke } from "./jokes/printJoke.js"
+import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants.js"
+import { printWeather } from "./weather/printWeather.js"
+
 
 window.addEventListener('load', printWeather)
 
