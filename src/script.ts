@@ -7,7 +7,7 @@ import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./
 import { printWeather } from "./weather/printWeather.js"
 
 
-window.addEventListener('load', printWeather)
+/* window.addEventListener('load', printWeather)
 
 newJoke.addEventListener('click', async () => {
     firstPartJoke.classList.add('invisible')
@@ -34,4 +34,4 @@ reviews.forEach(buttonReview => {
 
         console.log(reportJokes);
     })
-})
+}) */
