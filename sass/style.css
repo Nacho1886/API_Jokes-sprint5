@@ -60,6 +60,65 @@ body {
           animation: float 6s ease-in-out infinite;
 }
 
+/* 
+.buttonsTop {
+    position: absolute;
+    display: flex;
+
+
+    div {
+        position: relative;
+        list-style: none;
+        margin: 15px;
+
+
+        a {
+            position: relative;
+            top: 400px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 2em;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            z-index: 1;
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            overflow: hidden;
+            transition: top 0.5s, z-index 0s, transform 0.5s;
+            transition-delay: 0.5s, 0.5s, 0s;
+        }
+
+        a:hover {
+            transition-delay: 0s, 0.5s, 0.5s;
+            top: 300px;
+            transform: translateY(50px);
+            z-index: 11;
+        }
+        a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: skewX(45deg) translateX(150px);
+            transition: 0.5s;
+        }
+        a:hover::before {
+            transform: skewX(45deg) translateX(-150px);
+
+        }
+    }
+} */
 .divEspecialButtons * {
   margin: 0;
   padding: 0;
@@ -79,14 +138,6 @@ body {
 .divEspecialButtons::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 50%;
-  bottom: 0;
-  z-index: 10;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
 }
 
 .divEspecialButtons .specialSpan {
@@ -98,29 +149,49 @@ body {
 .divEspecialButtons span::before {
   content: "";
   position: absolute;
-  z-index: 10;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 9;
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
 
 .divEspecialButtons span:nth-child(1):before {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
   width: 50%;
   height: 100%;
-  bottom: 0;
+  left: 0;
+  -webkit-animation: spanLeft 2s linear forwards;
+          animation: spanLeft 2s linear forwards;
 }
 
 .divEspecialButtons span:nth-child(2):before {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
   width: 50%;
   height: 100%;
   right: 0;
+  -webkit-animation: spanRight 2s linear forwards;
+          animation: spanRight 2s linear forwards;
 }
 
 .divEspecialButtons span:nth-child(3):before {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 50%;
   top: 0;
+  -webkit-animation: spanTop 2s linear forwards;
+          animation: spanTop 2s linear forwards;
+  opacity: 80%;
+  z-index: 12;
+}
+
+.divEspecialButtons span:nth-child(4):before {
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-animation: spanBottom 2s linear forwards;
+          animation: spanBottom 2s linear forwards;
 }
 
 .divEspecialButtons .color {
@@ -128,14 +199,14 @@ body {
   filter: blur(150px);
 }
 
-.divEspecialButtons div:nth-child(1) {
+.divEspecialButtons div:nth-child(5) {
   top: -350px;
   background: #ff359b;
   width: 600px;
   height: 600px;
 }
 
-.divEspecialButtons div:nth-child(2) {
+.divEspecialButtons div:nth-child(6) {
   bottom: -150px;
   left: 100px;
   background: #fffd87;
@@ -143,7 +214,7 @@ body {
   height: 500px;
 }
 
-.divEspecialButtons div:nth-child(3) {
+.divEspecialButtons div:nth-child(7) {
   bottom: -50px;
   right: 0;
   background: #00d2ff;
@@ -151,18 +222,18 @@ body {
   height: 300px;
 }
 
-.divEspecialButtons ul {
+.buttonsBottom ul {
   position: relative;
   display: flex;
 }
-.divEspecialButtons ul li {
+.buttonsBottom ul li {
   position: relative;
   list-style: none;
-  margin: 10px;
+  margin: 15px;
 }
-.divEspecialButtons ul li a {
+.buttonsBottom ul li a {
   position: relative;
-  top: 0;
+  top: 350px;
   width: 80px;
   height: 80px;
   display: flex;
@@ -184,13 +255,13 @@ body {
   transition: top 0.5s, z-index 0s, transform 0.5s;
   transition-delay: 0.5s, 0.5s, 0s;
 }
-.divEspecialButtons ul li a:hover {
+.buttonsBottom ul li a:hover {
   transition-delay: 0s, 0.5s, 0.5s;
-  top: -50px;
+  top: 300px;
   transform: translateY(50px);
   z-index: 11;
 }
-.divEspecialButtons ul li a::before {
+.buttonsBottom ul li a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -201,10 +272,80 @@ body {
   transform: skewX(45deg) translateX(150px);
   transition: 0.5s;
 }
-.divEspecialButtons ul li a:hover::before {
+.buttonsBottom ul li a:hover::before {
   transform: skewX(45deg) translateX(-150px);
 }
 
+#NewJoke {
+  -webkit-animation: spanBottom 2s linear forwards;
+          animation: spanBottom 2s linear forwards;
+}
+
+@-webkit-keyframes spanRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+@keyframes spanRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+@-webkit-keyframes spanLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}
+@keyframes spanLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}
+@-webkit-keyframes spanBottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(350px);
+  }
+}
+@keyframes spanBottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(350px);
+  }
+}
+@-webkit-keyframes spanTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-250px);
+  }
+}
+@keyframes spanTop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-250px);
+  }
+}
 .timeContainer {
   display: flex;
   justify-content: center;
