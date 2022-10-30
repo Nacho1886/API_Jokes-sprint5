@@ -1,50 +1,69 @@
-/* 
+.divButtonsTop * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.divButtonsTop {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
+}
+.divButtonsTop::before {
+    content: '';
+    position: absolute;
+
+}
+
+
+
 .buttonsTop {
     position: absolute;
     display: flex;
-
-
+    
+    
     div {
         position: relative;
         list-style: none;
         margin: 15px;
 
-
         a {
             position: relative;
-            top: 400px;
-            width: 80px;
-            height: 80px;
+            top: 0;
+            width: 100px;
+            height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
+            // font-size: 1.3rem;
+            text-align: center;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 2em;
             border: 1px solid rgba(255, 255, 255, 0.4);
             border-right: 1px solid rgba(255, 255, 255, 0.2);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(4px);
-            z-index: 1;
+            z-index: 15;
             box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
             text-decoration: none;
             overflow: hidden;
             transition: top 0.5s, z-index 0s, transform 0.5s;
             transition-delay: 0.5s, 0.5s, 0s;
+
         }
         
         a:hover {
             transition-delay: 0s, 0.5s, 0.5s;
-            top: 300px;
-            transform: translateY(50px);
-            z-index: 11;
+            box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.1) ;
         }
         a::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
             width: 50px;
             height: 100%;
             background: rgba(255, 255, 255, 0.5);
@@ -56,7 +75,8 @@
 
         }
     }
-} */
+}
+
 
 
 
@@ -99,7 +119,6 @@
     width: 50%;
     height: 100%;
     left: 0;
-    animation: spanLeft 2s linear forwards;
 }
 
 .divEspecialButtons span:nth-child(2):before{
@@ -107,30 +126,21 @@
     width: 50%;
     height: 100%;
     right: 0;
-    animation: spanRight 2s linear forwards;
-
 }
 .divEspecialButtons span:nth-child(3):before{
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     width: 100%;
     height: 50%;
     top: 0;
-    animation: spanTop 2s linear forwards;
     opacity: 80%;
     z-index: 12;
 }
-// .divEspecialButtons span:nth-child(3):hover{
-//     opacity: 50%;
-
-// }
 .divEspecialButtons span:nth-child(4):before{
     width: 100%;
     height: 50%;
     bottom: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.1);
-    animation: spanBottom 2s linear forwards;
-
 }
 
 .divEspecialButtons .color {
@@ -222,10 +232,41 @@
     }
 }
 
-#NewJoke {
+
+.buttonToTop {
+    animation: spanButtonTop 2s linear forwards;
+}
+.spanToTop {
+    animation: spanTop 2s linear forwards;
+    z-index: 13;
+}
+.spanToRight {    
+    animation: spanRight 2s linear forwards;
+}
+.spanToLeft {    
+    animation: spanLeft 2s linear forwards;
+}
+.spanToBottom {    
     animation: spanBottom 2s linear forwards;
+    z-index: 9;
 }
 
+@keyframes spanButtonTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-150px);
+    }
+}
+@keyframes spanTop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-250px);
+    }
+}
 
 @keyframes spanRight {
     0% {
@@ -249,13 +290,5 @@
     }
     100% {
         transform: translateY(350px);
-    }
-}
-@keyframes spanTop {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-250px);
     }
 }

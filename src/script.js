@@ -8,13 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { constructionAnswer } from "./jokes/constructionAnswer.js";
+import { displayingPage } from "./jokes/displayingPage.js";
 import { Joke } from "./jokes/Joke.js";
 import { jokeSelecter } from "./jokes/jokeSelecter.js";
 import { printFinishJoke } from "./jokes/printFinishJoke.js";
 import { finalJoke } from "./jokes/printJoke.js";
-import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants.js";
+import { buttonResponse, firstJoke, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants.js";
 import { printWeather } from "./weather/printWeather.js";
 window.addEventListener('load', printWeather);
+firstJoke.addEventListener('click', displayingPage);
 newJoke.addEventListener('click', () => __awaiter(void 0, void 0, void 0, function* () {
     firstPartJoke.classList.add('invisible');
     buttonResponse.classList.add('invisible');

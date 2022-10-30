@@ -1,4 +1,9 @@
-export { newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes };
+export { firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes };
+const firstJoke = document.getElementById('firstJoke');
+const spanLeft = document.getElementById('spanLeft');
+const spanRight = document.getElementById('spanRight');
+const spanTop = document.getElementById('spanTop');
+const spanBottom = document.getElementById('spanBottom');
 const newJoke = document.getElementById('newJoke');
 const firstPartJoke = document.getElementById('firstPartJoke');
 const buttonResponse = document.getElementById('buttonResponse');

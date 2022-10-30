@@ -1,13 +1,17 @@
 import { constructionAnswer } from "./jokes/constructionAnswer.js"
+import { displayingPage } from "./jokes/displayingPage.js"
 import { Joke } from "./jokes/Joke.js"
 import { jokeSelecter } from "./jokes/jokeSelecter.js"
 import { printFinishJoke } from "./jokes/printFinishJoke.js"
 import { finalJoke } from "./jokes/printJoke.js"
-import { buttonResponse, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants.js"
+import { buttonResponse, firstJoke, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants.js"
 import { printWeather } from "./weather/printWeather.js"
 
 
+
 window.addEventListener('load', printWeather)
+
+firstJoke.addEventListener('click', displayingPage)
 
 newJoke.addEventListener('click', async () => {
     firstPartJoke.classList.add('invisible')
