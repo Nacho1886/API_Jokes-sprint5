@@ -1,7 +1,7 @@
-import { firstJoke, spanBottom, spanLeft, spanRight, spanTop } from "../variables/constants.js";
+import { buttonsTop, spanBottom, spanLeft, spanRight, spanTop } from "../variables/constants.js";
 export const displayingPage = () => {
-    firstJoke.classList.add('buttomToTop');
-    firstJoke.id = 'newJoke';
+    buttonsTop.classList.add('buttonToTop');
+    // firstJoke.id = 'newJoke';
     spanLeft.classList.add('spanToLeft');
     spanRight.classList.add('spanToRight');
     spanTop.classList.add('spanToTop');

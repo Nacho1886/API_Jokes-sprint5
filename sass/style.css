@@ -388,24 +388,19 @@ body {
     transform: translateY(350px);
   }
 }
-.timeContainer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-}
-
 .sizeTime {
-  top: 50px;
   width: 130px;
   height: 130px;
+  position: absolute;
+  top: 50px;
   border-radius: 40%;
   z-index: 11;
   -webkit-user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
        user-select: none;
+  -webkit-animation: time 1s forwards linear;
+          animation: time 1s forwards linear;
 }
 
 .text {
@@ -839,6 +834,26 @@ body {
     left: 10%;
     top: 75%;
     opacity: 0;
+  }
+}
+@-webkit-keyframes time {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-63.5px);
+  }
+}
+@keyframes time {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-63.5px);
   }
 }
 /*!

@@ -1,5 +1,6 @@
-export {firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes}
+export {buttonsTop, firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes}
 
+const buttonsTop: HTMLElement | null = document.querySelector('.buttonsTop');
 const firstJoke: HTMLElement | null = document.getElementById('firstJoke');
 const spanLeft: HTMLElement | null = document.getElementById('spanLeft');
 const spanRight: HTMLElement | null = document.getElementById('spanRight');

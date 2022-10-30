@@ -1,28 +1,16 @@
-.timeContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    
-}
 
 .sizeTime {
-    top: 50px;
     width: 130px;
     height: 130px;
+    position: absolute;
+    top: 50px;
     border-radius: 40%;
     z-index: 11;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    animation: time 1s forwards linear;
 }
-
-// h1 {
-//   position: fixed;
-//   left: 30%;
-
-// }
 
 .text {
     position: absolute;
@@ -441,5 +429,19 @@
         left: 10%;
         top: 75%;
         opacity: 0;
+    }
+}
+
+@keyframes time {
+
+    0% {
+        opacity: 0;
+        transform: translateX(0);
+
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-63.5px);
+
     }
 }
