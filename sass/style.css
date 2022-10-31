@@ -280,9 +280,19 @@ body {
   transform: skewX(45deg) translateX(-150px);
 }
 
-.buttonToTop {
-  -webkit-animation: spanButtonTop 2s ease-out forwards;
-          animation: spanButtonTop 2s ease-out forwards;
+.lowIndex {
+  z-index: 0;
+  opacity: 0;
+}
+
+.buttonToTopDisappear {
+  -webkit-animation: buttonTopDisappear 2s ease-out forwards;
+          animation: buttonTopDisappear 2s ease-out forwards;
+}
+
+.buttonToTopAppear {
+  -webkit-animation: buttonTopAppear 2s ease-out forwards;
+          animation: buttonTopAppear 2s ease-out forwards;
 }
 
 .spanToTop::before {
@@ -307,21 +317,53 @@ body {
   z-index: 9;
 }
 
-@-webkit-keyframes spanButtonTop {
+@-webkit-keyframes buttonTopDisappear {
   0% {
     transform: translateY(0);
+    opacity: 1;
+  }
+  99% {
+    z-index: 15;
   }
   100% {
     transform: translateY(-150px);
+    opacity: 0;
+    z-index: 0;
   }
 }
 
-@keyframes spanButtonTop {
+@keyframes buttonTopDisappear {
   0% {
     transform: translateY(0);
+    opacity: 1;
+  }
+  99% {
+    z-index: 15;
   }
   100% {
     transform: translateY(-150px);
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@-webkit-keyframes buttonTopAppear {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-150px);
+    opacity: 1;
+  }
+}
+@keyframes buttonTopAppear {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-150px);
+    opacity: 1;
   }
 }
 @-webkit-keyframes spanTop {
@@ -390,6 +432,42 @@ body {
   100% {
     transform: translateY(350px);
     z-index: 10;
+  }
+}
+@-webkit-keyframes positiveOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+@keyframes positiveOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+@-webkit-keyframes negativeOpacity {
+  0% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes negativeOpacity {
+  0% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+    display: none;
   }
 }
 .sizeTime {

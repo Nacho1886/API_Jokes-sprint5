@@ -231,8 +231,17 @@
 }
 
 
-.buttonToTop {
-    animation: spanButtonTop 2s ease-out forwards;
+.lowIndex {
+    z-index: 0;
+    opacity: 0;
+}
+
+
+.buttonToTopDisappear {
+    animation: buttonTopDisappear 2s ease-out forwards;
+}
+.buttonToTopAppear {
+    animation: buttonTopAppear 2s ease-out forwards;
 }
 .spanToTop::before {
     animation: spanTop 2s ease-out forwards;
@@ -249,14 +258,32 @@
     z-index: 9;
 }
 
-@keyframes spanButtonTop {
+
+@keyframes buttonTopDisappear {
     0% {
         transform: translateY(0);
+        opacity: 1;
+    }
+    99% {
+        z-index: 15;
     }
     100% {
         transform: translateY(-150px);
+        opacity: 0;
+        z-index: 0;
     }
 }
+@keyframes buttonTopAppear {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-150px);
+        opacity: 1;
+    }
+}
+
 @keyframes spanTop {
     0% {
         transform: translateY(0);
@@ -290,5 +317,24 @@
     100% {
         transform: translateY(350px);
         z-index: 10;
+    }
+}
+
+@keyframes positiveOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+@keyframes negativeOpacity {
+    0% {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+        display: none;
     }
 }

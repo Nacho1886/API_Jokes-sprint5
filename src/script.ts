@@ -18,6 +18,7 @@ newJoke.addEventListener('click', async () => {
     buttonResponse.classList.add('invisible')
 
     const joke = await jokeSelecter()
+    console.log("🚀 ~ file: script.ts ~ line 21 ~ newJoke.addEventListener ~ joke", joke)
     constructionAnswer(joke);
 })
 

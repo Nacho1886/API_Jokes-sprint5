@@ -1,5 +1,5 @@
-export { buttonTopJoke, firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes };
-const buttonTopJoke = document.getElementById('buttonTopJoke');
+export { firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes };
+// const buttonTopJoke: HTMLElement | null = document.querySelector('.buttonTopJoke');
 const firstJoke = document.getElementById('firstJoke');
 const spanLeft = document.getElementById('spanLeft');
 const spanRight = document.getElementById('spanRight');

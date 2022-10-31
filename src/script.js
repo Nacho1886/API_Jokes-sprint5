@@ -21,6 +21,7 @@ newJoke.addEventListener('click', () => __awaiter(void 0, void 0, void 0, functi
     firstPartJoke.classList.add('invisible');
     buttonResponse.classList.add('invisible');
     const joke = yield jokeSelecter();
+    console.log("🚀 ~ file: script.ts ~ line 21 ~ newJoke.addEventListener ~ joke", joke);
     constructionAnswer(joke);
 }));
 buttonResponse.addEventListener('click', () => {
