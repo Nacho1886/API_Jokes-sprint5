@@ -11,14 +11,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
 }
 .divButtonsTop::before {
     content: '';
     position: absolute;
-
 }
-
 
 
 .buttonsTop {
