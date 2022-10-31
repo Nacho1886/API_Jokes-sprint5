@@ -86,9 +86,8 @@ body {
   display: flex;
 }
 .buttonsTop div {
-  position: relative;
+  position: absolute;
   list-style: none;
-  margin: 15px;
 }
 .buttonsTop div a {
   position: relative;
@@ -107,7 +106,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-  z-index: 15;
   box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   overflow: hidden;
@@ -129,6 +127,15 @@ body {
 }
 .buttonsTop div a:hover::before {
   transform: skewX(45deg) translateX(-150px);
+}
+
+.highIndex {
+  z-index: 15;
+}
+
+.lowIndex {
+  z-index: 0;
+  opacity: 0;
 }
 
 .divEspecialButtons * {
@@ -280,11 +287,6 @@ body {
   transform: skewX(45deg) translateX(-150px);
 }
 
-.lowIndex {
-  z-index: 0;
-  opacity: 0;
-}
-
 .buttonToTopDisappear {
   -webkit-animation: buttonTopDisappear 2s ease-out forwards;
           animation: buttonTopDisappear 2s ease-out forwards;
@@ -354,6 +356,7 @@ body {
   100% {
     transform: translateY(-150px);
     opacity: 1;
+    z-index: 15;
   }
 }
 @keyframes buttonTopAppear {
@@ -364,6 +367,7 @@ body {
   100% {
     transform: translateY(-150px);
     opacity: 1;
+    z-index: 15;
   }
 }
 @-webkit-keyframes spanTop {
@@ -474,7 +478,7 @@ body {
   width: 130px;
   height: 130px;
   position: absolute;
-  top: 20px;
+  top: 60px;
   border-radius: 40%;
   z-index: 11;
   -webkit-user-select: none;

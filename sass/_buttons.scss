@@ -27,9 +27,8 @@
     
     
     div {
-        position: relative;
+        position: absolute;
         list-style: none;
-        margin: 15px;
 
         a {
             position: relative;
@@ -48,12 +47,13 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(4px);
-            z-index: 15;
             box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
             text-decoration: none;
             overflow: hidden;
             transition: top 0.5s, z-index 0s, transform 0.5s;
             transition-delay: 0.5s, 0.5s, 0s;
+        // transform: translateX(-63.5px);
+            
 
         }
         
@@ -75,6 +75,15 @@
 
         }
     }
+}
+
+.highIndex {
+    z-index: 15;
+}
+
+.lowIndex {
+    z-index: 0;
+    opacity: 0;
 }
 
 
@@ -231,11 +240,6 @@
 }
 
 
-.lowIndex {
-    z-index: 0;
-    opacity: 0;
-}
-
 
 .buttonToTopDisappear {
     animation: buttonTopDisappear 2s ease-out forwards;
@@ -281,6 +285,7 @@
     100% {
         transform: translateY(-150px);
         opacity: 1;
+        z-index: 15;
     }
 }
 
