@@ -226,28 +226,26 @@
         }
         a:hover::before {
             transform: skewX(45deg) translateX(-150px);
-
         }
-
     }
 }
 
 
-.buttonToTop {
-    animation: spanButtonTop 2s linear forwards;
+.buttonToTop::before {
+    animation: spanButtonTop 2s ease-out forwards;
 }
-.spanToTop {
-    animation: spanTop 2s linear forwards;
+.spanToTop::before {
+    animation: spanTop 2s ease-out forwards;
     z-index: 13;
 }
-.spanToRight {    
-    animation: spanRight 2s linear forwards;
+.spanToRight::before {    
+    animation: spanRight 2s ease-out forwards;
 }
-.spanToLeft {    
-    animation: spanLeft 2s linear forwards;
+.spanToLeft::before {    
+    animation: spanLeft 2s ease-out forwards;
 }
-.spanToBottom {    
-    animation: spanBottom 2s linear forwards;
+.spanToBottom::before {    
+    animation: spanBottom 2s ease-out forwards;
     z-index: 9;
 }
 
@@ -287,8 +285,10 @@
 @keyframes spanBottom {
     0% {
         transform: translateY(0);
+        z-index: 10;
     }
     100% {
         transform: translateY(350px);
+        z-index: 10;
     }
 }
