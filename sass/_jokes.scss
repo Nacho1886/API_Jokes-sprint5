@@ -1,4 +1,4 @@
-// .containerJokes {
+// .articleJokes {
 //     position: relative;
 //     width: 380px;
 //     height: 200px;
@@ -17,13 +17,14 @@
 
 
 
-.containerJokes * {
+.articleJokes * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 1;
 }
 
-.containerJokes {
+.articleJokes {
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -31,7 +32,7 @@
     justify-content: center;
     align-items: center;
 }
-.containerJokes::before {
+.articleJokes::before {
     content: '';
     position: absolute;
 
@@ -40,19 +41,21 @@
 
 
 #divJokes {
-    position: absolute;
-    display: flex;
-    
     position: relative;
     display: flex;
+    flex-direction: column;
+    flex-basis: content;
     justify-content: center;
     align-items: center;
     list-style: none;
             span {
                 position: relative;
-                top: 0;
-                width: 100px;
-                height: 100px;
+                top: 105px;
+                width: 360px;
+                height: 150px;
+                margin: 10px;
+                // width: 100px;
+                // height: 100px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -85,11 +88,11 @@
                 width: 50px;
                 height: 100%;
                 background: rgba(255, 255, 255, 0.5);
-                transform: skewX(45deg) translateX(150px);
+                transform: skewX(45deg) translateX(350px);
                 transition: 0.5s;
             }
             span:hover::before {
-                transform: skewX(45deg) translateX(-150px);
+                transform: skewX(45deg) translateX(-350px);
     
             }
         }

@@ -4,7 +4,7 @@ import { Joke } from "./jokes/Joke.js"
 import { jokeSelecter } from "./jokes/jokeSelecter.js"
 import { printFinishJoke } from "./jokes/printFinishJoke.js"
 import { finalJoke } from "./jokes/printJoke.js"
-import { buttonResponse, firstJoke, firstPartJoke, newJoke, reportJokes, reviews } from "./variables/constants.js"
+import { buttonResponse, firstJoke, newJoke, reportJokes, reviews } from "./variables/constants.js"
 import { printWeather } from "./weather/printWeather.js"
 
 

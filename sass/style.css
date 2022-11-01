@@ -13,62 +13,42 @@ body {
   display: none;
 }
 
-.containerJokes {
-  position: relative;
-  width: 380px;
-  height: 200px;
-}
-.containerJokes span {
-  z-index: 15;
-  width: 380px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 1px solid #fff;
-  border-radius: 50%;
-}
-
-.containerJokes * {
+.articleJokes * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 1;
 }
 
-.containerJokes {
+.articleJokes {
   position: absolute;
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
 }
 
-.containerJokes::before {
+.articleJokes::before {
   content: "";
   position: absolute;
 }
 
-.buttonsTop {
-  position: absolute;
-  display: flex;
-}
-.buttonsTop div {
+#divJokes {
   position: relative;
   display: flex;
+  flex-direction: column;
+  flex-basis: content;
   justify-content: center;
   align-items: center;
-}
-.buttonsTop div div {
-  position: absolute;
   list-style: none;
 }
-.buttonsTop div div a {
+#divJokes span {
   position: relative;
-  top: 0;
-  width: 100px;
-  height: 100px;
+  top: 105px;
+  width: 360px;
+  height: 150px;
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,21 +67,21 @@ body {
   transition: top 0.5s, z-index 0s, transform 0.5s;
   transition-delay: 0.5s, 0.5s, 0s;
 }
-.buttonsTop div div a:hover {
+#divJokes span:hover {
   transition-delay: 0s, 0.5s, 0.5s;
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
 }
-.buttonsTop div div a::before {
+#divJokes span::before {
   content: "";
   position: absolute;
   width: 50px;
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
-  transform: skewX(45deg) translateX(150px);
+  transform: skewX(45deg) translateX(350px);
   transition: 0.5s;
 }
-.buttonsTop div div a:hover::before {
-  transform: skewX(45deg) translateX(-150px);
+#divJokes span:hover::before {
+  transform: skewX(45deg) translateX(-350px);
 }
 
 /* body {
