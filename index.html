@@ -22,13 +22,13 @@
                     <span class="sunx"></span>
                 </div>
             </div>
-    
+
             <div class="cloudy sizeTime invisible" id="02_cloudy">
                 <span class="text" id="text_02_cloudy"></span>
                 <span class="cloud"></span>
                 <span class="cloudx"></span>
             </div>
-    
+
             <div class="stormy sizeTime invisible" id="03_stormy">
                 <span class="text" id="text_03_stormy"></span>
                 <ul>
@@ -46,7 +46,7 @@
                 <span class="stick"></span>
                 <span class="stick2"></span>
             </div>
-    
+
             <div class="breezy sizeTime invisible" id="04_breezy">
                 <span class="text" id="text_04_breezy"></span>
                 <ul>
@@ -58,7 +58,7 @@
                 </ul>
                 <span class="cloudr"></span>
             </div>
-    
+
             <div class="night sizeTime invisible" id="05_night">
                 <span class="text" id="text_05_night"></span>
                 <span class="moon"></span>
@@ -76,14 +76,25 @@
         <div class="buttonsTop">
             <div>
                 <div><a href="#" id="firstJoke" class="highIndex">Are you wanna laugh?</a></div>
-                <div><a href="#" id="newJoke" class="lowIndex">New joke</a></div>
+                <div><a href="#" id="newJoke" class="lowIndex" data-bs-toggle="collapse" data-bs-target="#firstPart"
+                    aria-expanded="false" aria-controls="firstPart">New joke</a></div>
                 <div class="invisible"><a id="buttonResponse" href="#">Second part</a></div>
             </div>
         </div>
     </section>
+
     <article class="containerJokes">
         <div id="divJokes">
-            <span id="firstPartJoke"></span>
+            <span>
+                
+                <div style="min-height: 120px;">
+                    <div class="collapse collapse-horizontal" id="firstPart">
+                        <div id="firstPartJoke" class="card card-body" style="width: 300px;">
+
+                        </div>
+                    </div>
+                </div>
+            </span>
             <span id="result"></span>
         </div>
     </article>

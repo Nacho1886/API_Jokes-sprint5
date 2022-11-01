@@ -18,7 +18,7 @@
   position: absolute;
 }
 
-.divJokes {
+#divJokes {
   position: absolute;
   display: flex;
   position: relative;
@@ -27,7 +27,7 @@
   align-items: center;
   list-style: none;
 }
-.divJokes span {
+#divJokes span {
   position: relative;
   top: 0;
   width: 100px;
@@ -50,11 +50,11 @@
   transition: top 0.5s, z-index 0s, transform 0.5s;
   transition-delay: 0.5s, 0.5s, 0s;
 }
-.divJokes span:hover {
+#divJokes span:hover {
   transition-delay: 0s, 0.5s, 0.5s;
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
 }
-.divJokes span::before {
+#divJokes span::before {
   content: "";
   position: absolute;
   width: 50px;
@@ -63,6 +63,6 @@
   transform: skewX(45deg) translateX(150px);
   transition: 0.5s;
 }
-.divJokes span:hover::before {
+#divJokes span:hover::before {
   transform: skewX(45deg) translateX(-150px);
 }/*# sourceMappingURL=jokes.css.map */

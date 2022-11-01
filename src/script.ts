@@ -14,7 +14,7 @@ window.addEventListener('load', printWeather)
 firstJoke.addEventListener('click', displayingPage)
 
 newJoke.addEventListener('click', async () => {
-    firstPartJoke.classList.add('invisible')
+    // firstPartJoke.classList.add('invisible')
     buttonResponse.classList.add('invisible')
 
     const joke = await jokeSelecter()
