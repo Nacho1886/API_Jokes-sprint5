@@ -76,9 +76,10 @@
         <div class="buttonsTop">
             <div>
                 <div><a href="#" id="firstJoke" class="highIndex">Are you wanna laugh?</a></div>
-                <div><a href="#" id="newJoke" class="lowIndex" data-bs-toggle="collapse" data-bs-target="#firstPart"
-                    aria-expanded="false" aria-controls="firstPart">New joke</a></div>
-                <div class="invisible"><a id="buttonResponse" href="#">Second part</a></div>
+                <div><a href="#" id="newJoke" class="lowIndex" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+                    aria-expanded="false" aria-controls="firstPart secondPart">New joke</a></div>
+                <div class="invisible"><a href="#" id="buttonResponse" class="lowIndex" data-bs-toggle="collapse" data-bs-target="#secondPart"
+                    aria-expanded="false" aria-controls="secondPart">Second part</a></div>
             </div>
         </div>
     </section>
@@ -87,14 +88,18 @@
         <div id="divJokes">
             <span>
                 <div>
-                    <div class="collapse collapse-vertical" id="firstPart">
-                        <div id="firstPartJoke">
-
-                        </div>
+                    <div class="collapse multi-collapse" id="firstPart">
+                        <div id="firstPartJoke" class="textSelected"></div>
                     </div>
                 </div>
             </span>
-            <span id="result"></span>
+            <span>
+                <div>
+                    <div class="collapse multi-collapse" id="secondPart">
+                        <div id="result" class="textSelected"></div>
+                    </div>
+                </div>
+            </span>
         </div>
     </article>
     <section class="divEspecialButtons">
@@ -108,11 +113,14 @@
         <div class="buttonsBottom">
 
             <ul>
-                <li><a data-funcion="1" class="review" href="#"><i class="fa-regular fa-face-angry fa-spin"
+                <li><a data-funcion="1" class="review" href="#" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+                    aria-expanded="false" aria-controls="firstPart secondPart"><i class="fa-regular fa-face-angry fa-spin"
                             style="--fa-animation-duration: 60s;"></i></a></li>
-                <li><a data-funcion="2" class="review" href="#"><i class="fa-regular fa-face-rolling-eyes fa-spin"
+                <li><a data-funcion="2" class="review" href="#" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+                    aria-expanded="false" aria-controls="firstPart secondPart"><i class="fa-regular fa-face-rolling-eyes fa-spin"
                             style="--fa-animation-duration: 40s;"></i></a></li>
-                <li><a data-funcion="3" class="review" href="#"><i class="fa-regular fa-face-grin-squint-tears fa-spin"
+                <li><a data-funcion="3" class="review" href="#" data-bs-toggle="collapse" data-bs-target=".multi-collapse"
+                    aria-expanded="false" aria-controls="firstPart secondPart"><i class="fa-regular fa-face-grin-squint-tears fa-spin"
                             style="--fa-animation-duration: 20s;"></i></a></li>
             </ul>
         </div>

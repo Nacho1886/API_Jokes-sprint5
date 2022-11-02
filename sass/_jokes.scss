@@ -54,14 +54,14 @@
                 width: 360px;
                 height: 150px;
                 margin: 10px;
-                // width: 100px;
-                // height: 100px;
+                padding: 5px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                // font-size: 1.3rem;
+                font-size: 0.9rem;
+                text-shadow: 1px 1px 2px #22222265;
                 text-align: center;
-                color: rgba(255, 255, 255, 0.7);
+                color: rgba(255, 255, 255, 0.9);
                 border: 1px solid rgba(255, 255, 255, 0.4);
                 border-right: 1px solid rgba(255, 255, 255, 0.2);
                 border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -74,10 +74,9 @@
                 transition: top 0.5s, z-index 0s, transform 0.5s;
                 transition-delay: 0.5s, 0.5s, 0s;
             // transform: translateX(-63.5px);
-                
-    
             }
-            
+
+
             span:hover {
                 transition-delay: 0s, 0.5s, 0.5s;
                 box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.2) ;
@@ -98,3 +97,15 @@
         }
     
 
+.textSelected::selection {
+    background: transparent;
+    color: #ff359b;
+    text-shadow: 1px 5px 2px #ff359a65;
+
+}
+.textSelected::-moz-selection {
+    background: transparent;
+    color: #ff359b;
+    text-shadow: 1px 5px 2px #ff359a65;
+
+}
