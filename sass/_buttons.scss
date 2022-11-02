@@ -53,7 +53,6 @@
                 overflow: hidden;
                 transition: top 0.5s, z-index 0s, transform 0.5s;
                 transition-delay: 0.5s, 0.5s, 0s;
-            // transform: translateX(-63.5px);
                 
     
             }
@@ -263,6 +262,19 @@
     z-index: 9;
 }
 
+.buttonToLeft {
+    animation: buttonLeft 2s ease-out forwards;
+}
+.buttonToLeftReverse {
+    animation: buttonLeft 2s ease-out forwards reverse;
+}
+.buttonToRight {
+    animation: buttonRight 2s ease-out forwards;
+}
+.buttonToRightReverse {
+    animation: buttonRight 2s ease-out forwards reverse;
+}
+
 
 @keyframes buttonTopDisappear {
     0% {
@@ -326,21 +338,27 @@
     }
 }
 
-@keyframes positiveOpacity {
+@keyframes buttonLeft {
     0% {
+        transform: translate(0, -150px);
+        z-index: 15;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-60px, -150px);
+        z-index: 15;
+        opacity: 1;
+    }
+}
+@keyframes buttonRight {
+    0% {
+        transform: translate(0, -150px);
+        z-index: 15;
         opacity: 0;
     }
     100% {
+        transform: translate(60px, -150px);
+        z-index: 15;
         opacity: 1;
-        display: block;
-    }
-}
-@keyframes negativeOpacity {
-    0% {
-        opacity: 1;
-    }
-    0% {
-        opacity: 0;
-        display: none;
     }
 }

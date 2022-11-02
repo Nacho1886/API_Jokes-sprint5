@@ -25,7 +25,8 @@ newJoke.addEventListener('click', () => __awaiter(void 0, void 0, void 0, functi
     constructionAnswer(joke);
 }));
 buttonResponse.addEventListener('click', () => {
-    buttonResponse.setAttribute('disabled', '');
+    newJoke.classList.add('buttonToLeftReverse');
+    buttonResponse.classList.add('buttonToRightReverse');
     printFinishJoke(finalJoke[1]);
 });
 reviews.forEach(buttonReview => {

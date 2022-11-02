@@ -23,7 +23,10 @@ newJoke.addEventListener('click', async () => {
 })
 
 buttonResponse.addEventListener('click', () => {
-    buttonResponse.setAttribute('disabled', '')
+    
+    newJoke.classList.add('buttonToLeftReverse')
+    buttonResponse.classList.add('buttonToRightReverse')
+
 
     printFinishJoke(finalJoke[1])
 })

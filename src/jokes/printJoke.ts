@@ -6,6 +6,8 @@ import { printFinishJoke } from "./printFinishJoke.js";
 export let finalJoke: object[]
 
 export const printJoke = joke => {
+
+    
     newJoke.setAttribute('disabled', '');
 
     finalJoke = joke
