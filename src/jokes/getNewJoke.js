@@ -13,6 +13,5 @@ import { jokeSelecter } from "./jokeSelecter.js";
 export const getNewJoke = () => __awaiter(void 0, void 0, void 0, function* () {
     newJoke.classList.add('notActivate');
     const joke = yield jokeSelecter();
-    console.log("🚀 ~ file: script.ts ~ line 21 ~ newJoke.addEventListener ~ joke", joke);
     constructionAnswer(joke);
 });
