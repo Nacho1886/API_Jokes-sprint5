@@ -1,4 +1,4 @@
-export { firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes, firstPart, secondPart };
+export { spans, firstSpan, secondSpan, firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes, firstPart, secondPart };
 // const buttonTopJoke: HTMLElement | null = document.querySelector('.buttonTopJoke');
 const firstJoke = document.getElementById('firstJoke');
 const spanLeft = document.getElementById('spanLeft');
@@ -9,6 +9,9 @@ const newJoke = document.getElementById('newJoke');
 const firstPartJoke = document.getElementById('firstPartJoke');
 const firstPart = document.getElementById('firstPart');
 const secondPart = document.getElementById('secondPart');
+const spans = document.querySelector('.spans');
+const firstSpan = document.getElementById('firstSpan');
+const secondSpan = document.getElementById('secondSpan');
 const buttonResponse = document.getElementById('buttonResponse');
 const result = document.getElementById('result');
 const reviews = document.querySelectorAll('.review');

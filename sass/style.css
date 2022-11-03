@@ -107,23 +107,25 @@ body {
 }
 
 .openWindow {
-  -webkit-animation: openTV 2s ease-out forwards;
-          animation: openTV 2s ease-out forwards;
+  -webkit-animation: openTV 1s ease-out forwards;
+          animation: openTV 1s ease-out forwards;
 }
 
 .closeWindow {
-  -webkit-animation: closeTV 2s ease-out forwards;
-          animation: closeTV 2s ease-out forwards;
+  -webkit-animation: closeTV 1s ease-out forwards;
+          animation: closeTV 1s ease-out forwards;
 }
 
 @-webkit-keyframes openTV {
   0% {
     height: 2px;
     width: 0px;
+    opacity: 0;
   }
   50% {
     height: 2px;
     width: 360px;
+    opacity: 1;
   }
   100% {
     height: 150px;
@@ -135,10 +137,12 @@ body {
   0% {
     height: 2px;
     width: 0px;
+    opacity: 0;
   }
   50% {
     height: 2px;
     width: 360px;
+    opacity: 1;
   }
   100% {
     height: 150px;
@@ -153,10 +157,12 @@ body {
   50% {
     height: 2px;
     width: 360px;
+    opacity: 1;
   }
   100% {
     height: 2px;
     width: 0px;
+    opacity: 0;
   }
 }
 @keyframes closeTV {
@@ -167,10 +173,12 @@ body {
   50% {
     height: 2px;
     width: 360px;
+    opacity: 1;
   }
   100% {
     height: 2px;
     width: 0px;
+    opacity: 0;
   }
 }
 /* body {
