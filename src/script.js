@@ -3,13 +3,12 @@ import { getNewJoke } from "./jokes/getNewJoke.js";
 import { Joke } from "./jokes/Joke.js";
 import { printFinishJoke } from "./jokes/printFinishJoke.js";
 import { finalJoke } from "./jokes/printJoke.js";
-import { buttonResponse, firstJoke, newJoke, reportJokes, reviews } from "./variables/constants.js";
+import { buttonResponse, firstJoke, firstPart, newJoke, reportJokes, reviews, secondPart } from "./variables/constants.js";
 import { printWeather } from "./weather/printWeather.js";
 window.addEventListener('load', printWeather);
 firstJoke.addEventListener('click', () => {
-    displayingPage();
     getNewJoke();
-    reviews.forEach(e => e.classList.add('notActivate'));
+    displayingPage();
 });
 newJoke.addEventListener('click', getNewJoke);
 buttonResponse.addEventListener('click', () => {
@@ -26,5 +25,9 @@ reviews.forEach(buttonReview => {
         console.log(reportJokes);
         reviews.forEach(e => e.classList.add('notActivate'));
         newJoke.classList.remove('notActivate');
+        firstPart.classList.remove('show');
+        secondPart.classList.remove('show');
+        firstPart.classList.add('hide');
+        secondPart.classList.add('hide');
     });
 });

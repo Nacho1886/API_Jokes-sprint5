@@ -1,4 +1,4 @@
-import { buttonResponse, firstPartJoke, newJoke } from "../variables/constants.js"
+import { buttonResponse, firstPart, firstPartJoke, newJoke } from "../variables/constants.js"
 
 export const printComplexJoke = joke => {
     newJoke.classList.remove('buttonToLeftReverse')
@@ -7,4 +7,5 @@ export const printComplexJoke = joke => {
     buttonResponse.classList.add('buttonToRight')
 
     firstPartJoke.innerHTML = joke[0]
+    firstPart.classList.add('show')
 }

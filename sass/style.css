@@ -54,7 +54,6 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 0.9rem;
-  font-size-adjust: 0.5;
   text-shadow: 1px 1px 2px rgba(34, 34, 34, 0.3960784314);
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
@@ -199,8 +198,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 1px 1px 2px rgba(34, 34, 34, 0.3960784314);
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(34, 34, 34, 0.3960784314);
   color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -392,6 +391,8 @@ body {
 .notActivate {
   pointer-events: none;
   cursor: default;
+  text-shadow: none !important;
+  color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .buttonToTopDisappear {
