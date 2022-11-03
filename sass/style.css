@@ -389,6 +389,11 @@ body {
   transform: skewX(45deg) translateX(-150px);
 }
 
+.notActivate {
+  pointer-events: none;
+  cursor: default;
+}
+
 .buttonToTopDisappear {
   -webkit-animation: buttonTopDisappear 2s ease-out forwards;
           animation: buttonTopDisappear 2s ease-out forwards;
@@ -422,23 +427,23 @@ body {
 }
 
 .buttonToLeft {
-  -webkit-animation: buttonLeft 1s ease-out forwards;
-          animation: buttonLeft 1s ease-out forwards;
+  -webkit-animation: buttonLeft 0.2s ease-out forwards;
+          animation: buttonLeft 0.2s ease-out forwards;
 }
 
 .buttonToLeftReverse {
-  -webkit-animation: buttonLeftReverse 1s ease-out forwards;
-          animation: buttonLeftReverse 1s ease-out forwards;
+  -webkit-animation: buttonLeftReverse 0.2s ease-out forwards;
+          animation: buttonLeftReverse 0.2s ease-out forwards;
 }
 
 .buttonToRight {
-  -webkit-animation: buttonRight 1s ease-out forwards;
-          animation: buttonRight 1s ease-out forwards;
+  -webkit-animation: buttonRight 0.2s ease-out forwards;
+          animation: buttonRight 0.2s ease-out forwards;
 }
 
 .buttonToRightReverse {
-  -webkit-animation: buttonRightReverse 1s ease-out forwards;
-          animation: buttonRightReverse 1s ease-out forwards;
+  -webkit-animation: buttonRightReverse 0.2s ease-out forwards;
+          animation: buttonRightReverse 0.2s ease-out forwards;
 }
 
 @-webkit-keyframes buttonTopDisappear {

@@ -244,6 +244,12 @@
 
 
 
+.notActivate {
+    pointer-events: none;
+    cursor: default;
+    
+}
+
 .buttonToTopDisappear {
     animation: buttonTopDisappear 2s ease-out forwards;
 }
@@ -266,16 +272,16 @@
 }
 
 .buttonToLeft {
-    animation: buttonLeft 1s ease-out forwards;
+    animation: buttonLeft 0.2s ease-out forwards;
 }
 .buttonToLeftReverse {
-    animation: buttonLeftReverse 1s ease-out forwards;
+    animation: buttonLeftReverse 0.2s ease-out forwards;
 }
 .buttonToRight {
-    animation: buttonRight 1s ease-out forwards;
+    animation: buttonRight 0.2s ease-out forwards;
 }
 .buttonToRightReverse {
-    animation: buttonRightReverse 1s ease-out forwards;
+    animation: buttonRightReverse 0.2s ease-out forwards;
 }
 
 
