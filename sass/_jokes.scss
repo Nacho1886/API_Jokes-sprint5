@@ -43,7 +43,7 @@
                 justify-content: center;
                 align-items: center;
                 font-size: 0.9rem;
-                // font-size-adjust: 0.5;
+                font-stretch: 50%;
                 text-shadow: 1px 1px 2px #22222265;
                 text-align: center;
                 color: rgba(255, 255, 255, 0.9);
@@ -58,7 +58,6 @@
                 overflow: hidden;
                 transition: top 0.5s, z-index 0s, transform 0.5s;
                 transition-delay: 0.5s, 0.5s, 0s;
-            // transform: translateX(-63.5px);
             }
 
 
@@ -93,4 +92,42 @@
     color: #ff359b;
     text-shadow: 1px 5px 2px #ff359a65;
 
+}
+
+
+.openWindow {
+    animation: openTV 2s ease-out forwards;
+}
+.closeWindow {
+    animation: closeTV 2s ease-out forwards;
+}
+
+@keyframes openTV {
+    0% {
+        height: 2px;
+        width: 0px;
+    }
+    50% {
+        height: 2px;
+        width: 360px;
+    }
+    100% {
+        height: 150px;
+        width: 360px;
+    }
+}
+@keyframes closeTV {
+    0% {
+        height: 150px;
+        width: 360px;
+    }
+    50% {
+        height: 2px;
+        width: 360px;
+    }
+    100% {
+        height: 2px;
+        width: 0px;
+    }
+    
 }
