@@ -30,6 +30,9 @@
         div {
             position: absolute;
             list-style: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
     
             a {
                 position: relative;
@@ -263,16 +266,16 @@
 }
 
 .buttonToLeft {
-    animation: buttonLeft 2s ease-out forwards;
+    animation: buttonLeft 1s ease-out forwards;
 }
 .buttonToLeftReverse {
-    animation: buttonLeft 2s ease-out forwards reverse;
+    animation: buttonLeftReverse 1s ease-out forwards;
 }
 .buttonToRight {
-    animation: buttonRight 2s ease-out forwards;
+    animation: buttonRight 1s ease-out forwards;
 }
 .buttonToRightReverse {
-    animation: buttonRight 2s ease-out forwards reverse;
+    animation: buttonRightReverse 1s ease-out forwards;
 }
 
 
@@ -350,6 +353,18 @@
         opacity: 1;
     }
 }
+@keyframes buttonLeftReverse {
+    0% {
+        transform: translate(-60px, -150px);
+        z-index: 15;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -150px);
+        z-index: 15;
+        opacity: 1;
+    }
+}
 @keyframes buttonRight {
     0% {
         transform: translate(0, -150px);
@@ -360,5 +375,20 @@
         transform: translate(60px, -150px);
         z-index: 15;
         opacity: 1;
+    }
+}
+@keyframes buttonRightReverse {
+    0% {
+        transform: translate(60px, -150px);
+        z-index: 15;
+        opacity: 1;
+    }
+    99% {
+        z-index: 15;
+    }
+    100% {
+        transform: translate(0, -150px);
+        z-index: 0;
+        opacity: 0;
     }
 }
