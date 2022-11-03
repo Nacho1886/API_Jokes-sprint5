@@ -1,4 +1,4 @@
-import { firstJoke, newJoke, spanBottom, spanLeft, spanRight, spanTop } from "../variables/constants.js";
+import { firstJoke, newJoke, spanBottom, spanLeft, spanRight, spanTop } from "../../variables/constants.js";
 export const displayingPage = () => {
     firstJoke.classList.add('buttonToTopDisappear');
     newJoke.classList.add('buttonToTopAppear');

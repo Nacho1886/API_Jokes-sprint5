@@ -1,4 +1,4 @@
-export { spans, firstSpan, secondSpan, firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes, firstPart, secondPart }
+export { firstSpan, secondSpan, firstJoke, spanLeft, spanRight, spanTop, spanBottom, newJoke, firstPartJoke, buttonResponse, result, reviews, reportJokes }
 
 // const buttonTopJoke: HTMLElement | null = document.querySelector('.buttonTopJoke');
 const firstJoke: HTMLElement | null = document.getElementById('firstJoke');
@@ -8,9 +8,6 @@ const spanTop: HTMLElement | null = document.getElementById('spanTop');
 const spanBottom: HTMLElement | null = document.getElementById('spanBottom');
 const newJoke: HTMLElement | null = document.getElementById('newJoke');
 const firstPartJoke: HTMLElement | null = document.getElementById('firstPartJoke');
-const firstPart: HTMLElement | null = document.getElementById('firstPart');
-const secondPart: HTMLElement | null = document.getElementById('secondPart');
-const spans: HTMLElement | null = document.querySelector('.spans');
 const firstSpan: HTMLElement | null = document.getElementById('firstSpan');
 const secondSpan: HTMLElement | null = document.getElementById('secondSpan');
 const buttonResponse: HTMLElement | null = document.getElementById('buttonResponse');

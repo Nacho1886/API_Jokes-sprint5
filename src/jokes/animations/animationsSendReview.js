@@ -1,4 +1,4 @@
-import { firstSpan, newJoke, reviews, secondSpan } from "../variables/constants.js";
+import { firstSpan, newJoke, reviews, secondSpan } from "../../variables/constants.js";
 export const animationsSendReview = () => {
     reviews.forEach(e => e.classList.add('notActivate'));
     newJoke.classList.remove('notActivate');

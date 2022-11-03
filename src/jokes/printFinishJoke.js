@@ -1,7 +1,6 @@
-import { result, reviews, secondSpan } from "../variables/constants.js";
+import { result } from "../variables/constants.js";
+import { animationsFinishJoke } from "./animations/animationsFinishJoke.js";
 export const printFinishJoke = joke => {
     result.innerHTML = joke;
-    reviews.forEach(e => e.classList.remove('notActivate'));
-    secondSpan.classList.remove('closeWindow');
-    secondSpan.classList.add('openWindow');
+    animationsFinishJoke();
 };
