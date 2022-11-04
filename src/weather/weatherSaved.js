@@ -11,7 +11,8 @@ import { APIs } from "../data/APIs.js";
 export const weatherSaved = () => __awaiter(void 0, void 0, void 0, function* () {
     const { userDates, userWeather } = APIs;
     const { url, key, referenceDates } = userWeather;
+    const { lat, lon, appId, units } = referenceDates;
     const { latitude, longitude } = yield (yield fetch(userDates.url)).json();
-    const weatherUrlComplet = url + referenceDates.latitude + latitude + referenceDates.longitude + longitude + referenceDates.appId + key + referenceDates.units;
+    const weatherUrlComplet = url + lat + latitude + lon + longitude + appId + key + units;
     return yield (yield fetch(weatherUrlComplet)).json();
 });

@@ -6,8 +6,8 @@ export const APIs = {
         url: 'https://api.openweathermap.org/data/2.5/weather',
         key: 'd0047952dfbeb9ec30622425fe11ed84',
         referenceDates: {
-            latitude: '?lat=',
-            longitude: '&lon=',
+            lat: '?lat=',
+            lon: '&lon=',
             appId: '&appid=',
             units: '&units=metric'
         }
